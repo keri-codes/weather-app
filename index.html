@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+    <link href="src/styles.css" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    <link href="src/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="title">THE WEATHER FORECAST</h1>
+      <div class="col-8">
+        <div class="row">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter a city name"
+              aria-label="Enter the search term with two button addons"
+            />
+            <button class="btn btn-outline-secondary" type="button">
+              Search
+            </button>
+            <button class="btn btn-outline-secondary" type="button">
+              Current Location
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row current-row">
+          <div class="col-6 current-city">
+              <div class="city">
+              <h1 class="city-name">Washington, DC</h1>
+              </div>
+          <div class="date">
+            <p class="current-date">Thursday 9:00PM</p>
+          </div>
+          <div class="temperature">
+            <h1 class="current-temperature">89°F |<span style="color:rgb(172, 172, 172);" > 59°F</span><h1>
+                <p>Partly sunny with a chance of rain</p>
+            </div>
+            </div>
+        <div class="col-6">
+            <i class="fas fa-sun fa-10x current-icon"></i>
+        </div>
+              </div>
+     
+      <div class="factors-group">
+        <div class="factors" id="precipitation">Precipitation: 51%</div>
+        <div class="factors" id="humidity">Humidity: 96%</div>
+        <div class="factors" id="wind">Wind: 3 mph</div>
+      </div>
+
+
+
+      <div class="row">
+          <div class="col-sm-2">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Thursday</h5>
+                <p class="card-text">
+                    89°F |<span style="color:rgb(169, 169, 169);" > 89°F </span>
+                  </p>
+                  <p><i class="fa-solid fa-cloud fa-2x"></i></p>
+              </div>
+            </div>
+          </div>
+  
+      <div class="col-sm-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Friday</h5>
+              <p class="card-text">
+                89°F | <span style="color:rgb(169, 169, 169);" >89°F</span>
+              </p>
+              <p><i class="fas fa-sun fa-2x"></i></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Saturday</h5>
+              <p class="card-text">
+                  89°F | <span style="color:rgb(169, 169, 169);" >89°F</span>
+                </p>
+                <p><i class="fa-solid fa-cloud-rain fa-2x"></i></p>
+            </div>
+          </div>
+        </div>
+            <div class="col-sm-2">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Sunday</h5>
+                  <p class="card-text">
+                      89°F | <span style="color:rgb(169, 169, 169);" >89°F</span>
+                    </p>
+                    <p><i class="fas fa-sun fa-2x"></i></p>
+                </div>
+              </div>
+            </div>
+                <div class="col-sm-2">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Monday</h5>
+                      <p class="card-text">
+                          89°F | <span style="color:rgb(169, 169, 169);" >89°F</span>
+                        </p>
+                        <p><i class="fa-solid fa-cloud-bolt fa-2x"></i></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-2">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">Tuesday</h5>
+                      <p class="card-text">
+                          89°F | <span style="color:rgb(169, 169, 169);" >89°F</span>
+                        </p>
+                        <p><i class="fa-solid fa-cloud-bolt fa-2x"></i></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
+  
+
+    </div>
+    <script src="src/index.js"></script>
+    <script src="https://kit.fontawesome.com/2f823ff499.js" crossorigin="anonymous"></script>
+  </body>
+</html>
