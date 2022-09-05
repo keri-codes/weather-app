@@ -42,33 +42,40 @@ function formatDate(date) {
 }
 currentDate.innerHTML = formatDate(currentTime);
 
-//searching for a city (i.e. Paris), display the city name on the page after the user submits the form.
+function currentLocation(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let apiKey = "946b140ab52cb4ada4be919305c799e7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
+}
+
+function showTemperature(response) {
+  let temperature = Math.round(response.data.main.temp);
+  let currentTemperature = document.querySelector("#current-day-temperature");
+  currentTemperature.innerHTML = `${temperature}`;
+
+  let showLocation = document.querySelector("#city-name");
+  showLocation.innerHTML = `${response.data.name}`;
+}
+
+function getCurrentPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(currentLocation);
+}
+
 function showCitySearch(event) {
   event.preventDefault();
-  let searchInput = document.querySelector("#city-input");
+  let searchInput = document.querySelector("#city-input").value;
   let cityInput = document.querySelector("#city-name");
   cityInput.innerHTML = searchInput.value;
+  let apiKey = "946b140ab52cb4ada4be919305c799e7";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
 }
 
 let citySearchForm = document.querySelector("#search-form");
 citySearchForm.addEventListener("submit", showCitySearch);
 
-//convert the temperature to Farenheit when clicked.
-function convertToFarenheit(event) {
-  event.preventDefault();
-  let farenheitTemperature = document.querySelector("#current-day-temperature");
-  farenheitTemperature.innerHTML = 99;
-}
-
-let farenheitLink = document.querySelector("#farenheit-link");
-farenheitLink.addEventListener("click", convertToFarenheit);
-
-//convert the temperature to Farenheit when clicked.
-function convertToCelsius(event) {
-  event.preventDefault();
-  let celsiusTemperature = document.querySelector("#current-day-temperature");
-  celsiusTemperature.innerHTML = 45;
-}
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
+let button = document.querySelector("#current-location");
+button.addEventListener("click", getCurrentPosition);
