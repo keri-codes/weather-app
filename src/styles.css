@@ -26,6 +26,13 @@ p {
   font-weight: 400;
 }
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+}
+
 .container {
   background-color: white;
   border-radius: 15px;
