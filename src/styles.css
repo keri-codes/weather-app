@@ -135,9 +135,10 @@ img {
 
 .factors {
   display: inline-block;
-  padding: 10px 15px;
+  padding: 10px 40px;
   color: #fff;
   font-weight: 500;
+  font-size: 18px;
 }
 
 .fa-sun {
