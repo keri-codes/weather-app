@@ -129,7 +129,7 @@ function convertTime(time, timezone) {
 let celsiusTemperature = null;
 
 let citySearchForm = document.querySelector("#search-form");
-citySearchForm.addEventListener("submit", showCitySearch);
+citySearchForm.addEventListener("submit", handleSubmit);
 
 let button = document.querySelector("#current-location");
 button.addEventListener("click", getCurrentPosition);
