@@ -64,14 +64,16 @@ function getCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(currentLocation);
 }
 
-function showCitySearch(event) {
-  event.preventDefault();
-  let searchInput = document.querySelector("#city-input").value;
-  let cityInput = document.querySelector("#city-name");
-  cityInput.innerHTML = searchInput.value;
+function searchCity(city) {
   let apiKey = "946b140ab52cb4ada4be919305c799e7";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemperature);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city-input").value;
+  searchCity(city);
 }
 
 function displayFarenheitTemp(event) {
@@ -91,6 +93,17 @@ function displayCelsiusTemp(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
+function convertTime(time, timezone) {
+  let date = new Date(time * 1000);
+  let localTime = date.getTime();
+  let localOffset = date.getTimezoneOffset() * 60000;
+  let utc = localTime + localOffset;
+  let localizedTime = utc + timezone * 1000;
+  let convertedTime = new Date(localizedTime);
+
+  return convertedTime;
+}
+
 let celsiusTemperature = null;
 
 let citySearchForm = document.querySelector("#search-form");
@@ -104,3 +117,5 @@ farenheitLink.addEventListener("click", displayFarenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemp);
+
+searchCity("Winchester");
