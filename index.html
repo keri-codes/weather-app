@@ -67,21 +67,28 @@
               <span id="pipe"> | </span>
               <a href="#" id="farenheit-link">°F</a>
             </h1>
-
-            <p>Partly sunny with a chance of rain</p>
+            <p id="description"></p>
           </div>
         </div>
-        <div class="col-6">
-          <i class="fas fa-sun fa-10x current-icon"></i>
+
+        <div class="col-sm">
+          <img src="media/sunny.png" id="current-icon" alt="sunny" />
         </div>
       </div>
 
-      <div class="factors-group">
-        <div class="factors" id="precipitation">Precipitation: 51%</div>
-        <div class="factors" id="humidity">Humidity: 96%</div>
-        <div class="factors" id="wind">Wind: 3 mph</div>
+        <div class="col-sm">
+          <div class="weather-parameters">
+            <div class="factors" id="precipitation">
+              <i class="fa-solid fa-droplet parameters"></i> Precipitation: 51%
+            </div>
+            <div class="factors">Humidity: <span id="humidity"></span>%</div>
+            <div class="factors">Wind: <span id="wind"></span> mph</div>
+            <div class="factors">Sunrise: <span id="sunrise"></span></div>
+            <div class="factors">Sunset: <span id="sunset"></span></div>
+          </div>
+        </div>
       </div>
-
+      
       <div class="row">
         <div class="col-sm-2">
           <div class="card">

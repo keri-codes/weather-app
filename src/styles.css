@@ -1,6 +1,4 @@
 body {
-  /* width: 80vw;
-  height: 100vh;*/
   font-family: "Montserrat", sans-serif;
   background-image: linear-gradient(
     109.6deg,
@@ -8,15 +6,12 @@ body {
     rgba(206, 223, 255, 0.69)
   );
   color: rgb(66 88 127);
-  margin: 0 auto;
+  margin: 50px 0px 0px 0px;
 }
 
-.container {
-  background-color: white;
-  border-radius: 15px;
-  border: solid #fff;
-  padding: 30px;
-  margin: 35px auto;
+html,
+body {
+  min-height: 100%;
 }
 
 h1 {
@@ -31,6 +26,14 @@ p {
   font-weight: 400;
 }
 
+.container {
+  background-color: white;
+  border-radius: 15px;
+  border: solid #fff;
+  padding: 30px;
+  margin: 35px auto;
+}
+
 .col-8 {
   margin: 0 auto;
   width: 50%;
@@ -38,8 +41,8 @@ p {
 
 .current-row {
   align-items: center;
-  width: 70%;
-  margin: 30px auto;
+  width: 90%;
+  margin: 50px auto;
 }
 
 .title {
@@ -75,6 +78,10 @@ p {
   text-align: left;
 }
 
+.currentDate {
+  font-size: 18px;
+}
+
 .current-temperature,
 #farenheit-link,
 #celsius-link {
@@ -82,13 +89,28 @@ p {
   color: #42587f;
 }
 
-a[tabindex]:focus {
-  font-weight: 700;
-}
-
 #farenheit-link,
 #celsius-link {
   text-decoration: none;
+  position: relative;
+  top: -15px;
+  left: -5px;
+  font-size: 20px;
+}
+
+#pipe {
+  color: #42587f;
+  position: relative;
+  top: -15px;
+  left: -5px;
+  font-size: 20px;
+}
+
+.weather-parameters {
+  padding: 20px;
+  background: #42587f;
+  color: #ffffff;
+  border-radius: 15px;
 }
 
 .factors-group {
@@ -127,7 +149,7 @@ i.fa-solid.fa-cloud-bolt.fa-2x {
   color: #7687a6;
 }
 
-.fa-solid,
+.fa-2x,
 .fas {
   text-align: center;
   width: 100%;
