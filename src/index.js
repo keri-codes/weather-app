@@ -51,12 +51,34 @@ function currentLocation(position) {
 }
 
 function showTemperature(response) {
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = response.data.main.temp;
+  let temperature = Math.round(celsiusTemperature);
   let currentTemperature = document.querySelector("#current-day-temperature");
   let showLocation = document.querySelector("#city-name");
+  let cityTimezone = response.data.timezone;
+  let sunrise = convertTime(response.data.sys.sunrise, cityTimezone);
+  let sunset = convertTime(response.data.sys.sunset, cityTimezone);
+  let dateSunrise = sunrise.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
+  let dateSunset = sunset.toLocaleString("en-US", {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: true,
+  });
 
-  showLocation.innerHTML = `${response.data.name}`;
   currentTemperature.innerHTML = `${temperature}`;
+  showLocation.innerHTML = `${response.data.name}`;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].main;
+  document.querySelector("#sunrise").innerHTML = dateSunrise;
+  document.querySelector("#sunset").innerHTML = dateSunset;
 }
 
 function getCurrentPosition(event) {
