@@ -33,9 +33,9 @@
                 class="form-control"
                 id="city-input"
                 placeholder="Enter a city name"
+                autocomplete="off"
                 aria-label="Enter the search term with two button addons"
               />
-
               <button type="submit" class="btn btn-outline-secondary">
                 Search
               </button>
@@ -51,22 +51,21 @@
           </div>
         </form>
       </div>
+
       <div class="row current-row">
-        <div class="col-6 current-city">
+        <div class="col-sm current-city">
           <div class="city">
-            <h1 class="city-name" id="city-name">Washington, DC</h1>
+            <h1 class="city-name" id="city-name"></h1>
           </div>
           <div class="date">
-            <p class="currentDate" id="current-date">Thursday 9:00PM</p>
+            <p class="currentDate" id="current-date"></p>
           </div>
           <div class="temperature">
-            <!--<h1 class="current-temperature">89°F |<span style="color:rgb(172, 172, 172);" > 59°F</span><h1>-->
-
             <h1 class="current-temperature">
-              <span id="current-day-temperature">89</span>
-              <a href="#" tabindex="1" id="farenheit-link">°F</a
-              ><span style="font-size: 40px; color: #42587f"> | </span>
-              <a href="#" tabindex="1" id="celsius-link">°C</a>
+              <span id="current-day-temperature"></span>
+              <a href="#" class="active" id="celsius-link">°C</a>
+              <span id="pipe"> | </span>
+              <a href="#" id="farenheit-link">°F</a>
             </h1>
 
             <p>Partly sunny with a chance of rain</p>
