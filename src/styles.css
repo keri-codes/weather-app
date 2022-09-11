@@ -148,6 +148,7 @@ img {
 
 img#current-icon {
   width: 15px;
+  display: inline-block;
 }
 
 i.fas.fa-sun.fa-10x.current-icon {
