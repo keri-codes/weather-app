@@ -96,6 +96,11 @@ img {
   color: #42587f;
 }
 
+.current-temperature .active {
+  font-weight: 800;
+  cursor: default;
+}
+
 #farenheit-link,
 #celsius-link {
   text-decoration: none;
