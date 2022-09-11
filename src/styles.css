@@ -142,7 +142,8 @@ img {
 }
 
 .current-parameter {
-  padding-left: 20px;
+  padding-left: 10px;
+  vertical-align: middle;
 }
 
 .fa-sun {
@@ -152,7 +153,7 @@ img {
 }
 
 img#current-icon {
-  width: 15px;
+  width: 25px;
   display: inline-block;
 }
 
