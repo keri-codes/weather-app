@@ -141,6 +141,10 @@ img {
   font-size: 18px;
 }
 
+.current-parameter {
+  padding-left: 20px;
+}
+
 .fa-sun {
   color: rgb(255, 238, 0);
   text-align: center;
