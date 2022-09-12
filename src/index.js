@@ -56,7 +56,7 @@ function showTemperature(response) {
   let currentTemperature = document.querySelector("#current-day-temperature");
   let showLocation = document.querySelector("#city-name");
   let cityTimezone = response.data.timezone;
-  let windDirection = response.data.main.wind.direction.code;
+  let windDirection = document.querySelector("#wind-direction");
   let sunrise = convertTime(response.data.sys.sunrise, cityTimezone);
   let sunset = convertTime(response.data.sys.sunset, cityTimezone);
   let dateSunrise = sunrise.toLocaleString("en-US", {
@@ -80,7 +80,7 @@ function showTemperature(response) {
     response.data.weather[0].main;
   document.querySelector("#sunrise").innerHTML = dateSunrise;
   document.querySelector("#sunset").innerHTML = dateSunset;
-  document.querySelector("#wind-direction").innerHTML = windDirection;
+  windDirection.innerHTML = `response.data.main.wind.direction.code`;
 }
 
 function getCurrentPosition(event) {
