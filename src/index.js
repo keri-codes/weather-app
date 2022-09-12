@@ -79,6 +79,8 @@ function showTemperature(response) {
     response.data.weather[0].main;
   document.querySelector("#sunrise").innerHTML = dateSunrise;
   document.querySelector("#sunset").innerHTML = dateSunset;
+  document.querySelector("#wind-direction").innerHTML =
+    response.data.main.wind.direction.code;
 }
 
 function getCurrentPosition(event) {
