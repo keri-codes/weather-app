@@ -166,9 +166,8 @@ img#current-icon {
   margin-right: 10px;
 }
 
-img#current-icon2 {
-  display: inline-block;
-  width: 18px;
+#unit {
+  vertical-align: middle;
 }
 
 i.fas.fa-sun.fa-10x.current-icon {
