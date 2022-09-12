@@ -81,6 +81,9 @@ function showTemperature(response) {
   document.querySelector("#sunrise").innerHTML = dateSunrise;
   document.querySelector("#sunset").innerHTML = dateSunset;
   windDirection.innerHTML = response.data.wind.direction.code;
+  document.querySelector("#real-feel").innerHTML = Math.round(
+    response.data.main.feels_like
+  );
 }
 
 function getCurrentPosition(event) {
