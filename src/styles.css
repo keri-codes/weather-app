@@ -157,6 +157,11 @@ img#current-icon {
   display: inline-block;
 }
 
+img#current-icon2 {
+  display: inline-block;
+  width: 22px;
+}
+
 i.fas.fa-sun.fa-10x.current-icon {
   margin: 0 auto;
   color: rgb(255, 238, 0);
