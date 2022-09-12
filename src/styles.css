@@ -146,6 +146,14 @@ img {
   vertical-align: middle;
 }
 
+#humidity,
+#wind,
+#sunrise,
+#sunset,
+#wind-direction {
+  vertical-align: middle;
+}
+
 .fa-sun {
   color: rgb(255, 238, 0);
   text-align: center;
