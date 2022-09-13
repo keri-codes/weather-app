@@ -83,6 +83,7 @@ function showTemperature(response) {
   document.querySelector("#real-feel").innerHTML = Math.round(
     response.data.main.feels_like
   );
+  realFeel = Math.round(response.data.main.feels_like);
 }
 
 function getCurrentPosition(event) {
