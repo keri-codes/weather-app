@@ -40,6 +40,7 @@ function formatDate(date) {
   let formattedDate = `${currentDay}, ${currentMonth} ${currentDate}, ${currentYear} ${str}`;
   return formattedDate;
 }
+
 currentDate.innerHTML = formatDate(currentTime);
 
 function currentLocation(position) {
@@ -108,6 +109,7 @@ function displayFarenheitTemp(event) {
   farenheitLink.classList.add("active");
   let temperatureElement = document.querySelector("#current-day-temperature");
   temperatureElement.innerHTML = Math.round(farenheitTemp);
+  document.querySelector("#real-feel").innerHTML = realFeel;
   document.querySelector("#real-unit").innerHTML = `°F`;
 }
 
@@ -117,6 +119,9 @@ function displayCelsiusTemp(event) {
   celsiusLink.classList.add("active");
   farenheitLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  document.querySelector("#real-feel").innerHTML = Math.round(
+    (realFeel * 9) / 5 + 32
+  );
   document.querySelector("#real-unit").innerHTML = `°C`;
 }
 
@@ -132,6 +137,7 @@ function convertTime(time, timezone) {
 }
 
 let celsiusTemperature = null;
+let realFeel = null;
 
 let citySearchForm = document.querySelector("#search-form");
 citySearchForm.addEventListener("submit", handleSubmit);
