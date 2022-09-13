@@ -84,7 +84,7 @@ function showTemperature(response) {
   document.querySelector("#real-feel").innerHTML = Math.round(
     response.data.main.feels_like
   );
-  let realFeel = Math.round(response.data.main.feels_like);
+  realFeel = Math.round(response.data.main.feels_like);
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
