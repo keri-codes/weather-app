@@ -108,6 +108,7 @@ function displayFarenheitTemp(event) {
   farenheitLink.classList.add("active");
   let temperatureElement = document.querySelector("#current-day-temperature");
   temperatureElement.innerHTML = Math.round(farenheitTemp);
+  document.querySelector("#real-unit").innerHTML = `°F`;
 }
 
 function displayCelsiusTemp(event) {
@@ -116,6 +117,7 @@ function displayCelsiusTemp(event) {
   celsiusLink.classList.add("active");
   farenheitLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  document.querySelector("#real-unit").innerHTML = `°C`;
 }
 
 function convertTime(time, timezone) {
