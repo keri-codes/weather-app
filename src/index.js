@@ -113,7 +113,7 @@ function displayFarenheitTemp(event) {
   document.querySelector("#real-feel").innerHTML = Math.round(
     (realFeel * 9) / 5 + 32
   );
-  document.querySelector("#real-unit").innerHTML = `°C`;
+  document.querySelector("#real-unit").innerHTML = `°F`;
 }
 
 function displayCelsiusTemp(event) {
@@ -123,7 +123,7 @@ function displayCelsiusTemp(event) {
   farenheitLink.classList.remove("active");
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
   document.querySelector("#real-feel").innerHTML = realFeel;
-  document.querySelector("#real-unit").innerHTML = `°F`;
+  document.querySelector("#real-unit").innerHTML = `°C`;
 }
 
 function convertTime(time, timezone) {
