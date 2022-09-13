@@ -166,10 +166,6 @@ img#current-icon {
   margin-right: 10px;
 }
 
-#unit {
-  vertical-align: middle;
-}
-
 i.fas.fa-sun.fa-10x.current-icon {
   margin: 0 auto;
   color: rgb(255, 238, 0);
