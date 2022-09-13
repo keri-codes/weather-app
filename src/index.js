@@ -69,6 +69,7 @@ function showTemperature(response) {
     minute: "numeric",
     hour12: true,
   });
+  let iconElement = document.querySelector("#icon");
 
   currentTemperature.innerHTML = `${temperature}`;
   showLocation.innerHTML = `${response.data.name}`;
@@ -83,7 +84,12 @@ function showTemperature(response) {
   document.querySelector("#real-feel").innerHTML = Math.round(
     response.data.main.feels_like
   );
-  realFeel = Math.round(response.data.main.feels_like);
+  let realFeel = Math.round(response.data.main.feels_like);
+  iconElement.setAttribute(
+    "src",
+    `./media/${response.data.weather[0].icon}.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function getCurrentPosition(event) {
