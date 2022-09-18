@@ -43,6 +43,34 @@ function formatDate(date) {
 
 currentDate.innerHTML = formatDate(currentTime);
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-sm-2">
+    <div class="card">
+        <div class="card-body">
+         <h5 class="card-title">${day}</h5>
+         <p class="card-text">
+          89°F |<span style="color: rgb(169, 169, 169)"> 89°F </span>
+          </p>
+          <p>
+          <i class="fa-solid fa-cloud fa-2x"></i>
+        </p>
+        </div>
+      </div>
+      </div>
+    `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function currentLocation(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
@@ -145,6 +173,8 @@ function convertTime(time, timezone) {
 
 let celsiusTemperature = null;
 let realFeel = null;
+
+displayForecast();
 
 let citySearchForm = document.querySelector("#search-form");
 citySearchForm.addEventListener("submit", handleSubmit);
