@@ -90,19 +90,18 @@ function currentLocation(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "946b140ab52cb4ada4be919305c799e7";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(showTemperature);
 }
 
 function getForecast(coordinates) {
   let apiKey = "946b140ab52cb4ada4be919305c799e7";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
 
 function showTemperature(response) {
-  celsiusTemperature = response.data.main.temp;
-  let temperature = Math.round(celsiusTemperature);
+  temperature = Math.round(response.data.main.temp);
   let currentTemperature = document.querySelector("#current-day-temperature");
   let showLocation = document.querySelector("#city-name");
   let cityTimezone = response.data.timezone;
@@ -150,7 +149,7 @@ function getCurrentPosition(event) {
 
 function searchCity(city) {
   let apiKey = "946b140ab52cb4ada4be919305c799e7";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(showTemperature);
 }
 
@@ -162,8 +161,6 @@ function handleSubmit(event) {
 
 function displayFarenheitTemp(event) {
   event.preventDefault();
-  let farenheitTemp = (celsiusTemperature * 9) / 5 + 32;
-  celsiusLink.classList.remove("active");
   farenheitLink.classList.add("active");
   let temperatureElement = document.querySelector("#current-day-temperature");
   temperatureElement.innerHTML = Math.round(farenheitTemp);
@@ -171,16 +168,6 @@ function displayFarenheitTemp(event) {
     (realFeel * 9) / 5 + 32
   );
   document.querySelector("#real-unit").innerHTML = `°F`;
-}
-
-function displayCelsiusTemp(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-day-temperature");
-  celsiusLink.classList.add("active");
-  farenheitLink.classList.remove("active");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  document.querySelector("#real-feel").innerHTML = realFeel;
-  document.querySelector("#real-unit").innerHTML = `°C`;
 }
 
 function convertTime(time, timezone) {
@@ -194,7 +181,6 @@ function convertTime(time, timezone) {
   return convertedTime;
 }
 
-let celsiusTemperature = null;
 let realFeel = null;
 
 let citySearchForm = document.querySelector("#search-form");
@@ -205,8 +191,5 @@ button.addEventListener("click", getCurrentPosition);
 
 let farenheitLink = document.querySelector("#farenheit-link");
 farenheitLink.addEventListener("click", displayFarenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 searchCity("Winchester");

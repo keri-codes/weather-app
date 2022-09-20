@@ -95,28 +95,6 @@ img {
   color: #42587f;
 }
 
-.current-temperature .active {
-  font-weight: 800;
-  cursor: default;
-}
-
-#farenheit-link,
-#celsius-link {
-  text-decoration: none;
-  position: relative;
-  top: -15px;
-  left: -5px;
-  font-size: 20px;
-}
-
-#pipe {
-  color: #42587f;
-  position: relative;
-  top: -15px;
-  left: -5px;
-  font-size: 20px;
-}
-
 .weather-parameters {
   padding: 20px;
   background: #42587f;
