@@ -35,7 +35,10 @@ img {
   margin: 0 auto;
   width: 60%;
 }
-
+img.catcode {
+  width: 60px;
+  padding-top: 10px;
+}
 img#icon {
   width: 80%;
 }
