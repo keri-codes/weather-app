@@ -26,10 +26,24 @@ p {
   font-weight: 400;
 }
 
+p.card-text {
+  margin-bottom: 0;
+}
+
 img {
   display: block;
   margin: 0 auto;
-  width: 30%;
+  width: 60%;
+}
+
+img#icon {
+  width: 80%;
+}
+
+img#current-icon {
+  width: 25px;
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .container {
@@ -137,33 +151,6 @@ img {
 
 .fa-sun {
   color: rgb(255, 238, 0);
-  text-align: center;
-  width: 100%;
-}
-
-img#current-icon {
-  width: 25px;
-  display: inline-block;
-  margin-right: 10px;
-}
-
-i.fas.fa-sun.fa-10x.current-icon {
-  margin: 0 auto;
-  color: rgb(255, 238, 0);
-  text-align: center;
-  width: 100%;
-}
-
-i.fa-solid.fa-cloud-rain.fa-2x {
-  color: #acbbd5;
-}
-
-i.fa-solid.fa-cloud-bolt.fa-2x {
-  color: #7687a6;
-}
-
-.fa-2x,
-.fas {
   text-align: center;
   width: 100%;
 }

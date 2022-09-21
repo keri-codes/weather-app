@@ -73,9 +73,10 @@ function displayForecast(response) {
           forecastDay.temp.min
         )}°F </span>
           </p>
-          <img src="http://openweathermap.org/img/wn/${
-            forecastDay.weather[0].icon
-          }@2x.png" alt="" width="100" />
+          <img src="./media/icons/${forecastDay.weather[0].icon}.png"
+            alt="
+            class="forecast-icon"
+             width="100" />
         </div>
       </div>
       </div>
@@ -135,7 +136,7 @@ function showTemperature(response) {
   realFeel = Math.round(response.data.main.feels_like);
   iconElement.setAttribute(
     "src",
-    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `./media/icons/${response.data.weather[0].icon}.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
